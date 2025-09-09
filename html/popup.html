@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NPM shild is active</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #4e4b4b;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      width: 100%;
+      margin: 0;
+      color: #36dcce;
+    }
+    
+    .container {
+      text-align: center;
+      padding: 20px;
+    }
+    
+    .shield {
+      width: 80px;
+      height: 100px;
+      background: linear-gradient(135deg, #2b7ac9, #36dcce);
+      border-radius: 50% 50% 0 0 / 100% 100% 0 0;  
+      position: relative;
+      margin: 0 auto 20px;
+      animation: pulso 2s infinite; 
+      
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -20px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 0;
+        border-left: 40px solid transparent;
+        border-right: 40px solid transparent;
+        border-top: 20px solid #36dcce;
+      }
+    }
+    
+    /* Animación pulsante: escala y brillo */
+    @keyframes pulso {
+      0% { 
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(76, 175, 80, 0.7);
+      }
+      50% { 
+        transform: scale(1.05);
+        box-shadow: 0 0 0 10px rgba(76, 175, 80, 0);
+      }
+      100% { 
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(76, 175, 80, 0);
+      }
+    }
+    
+    .message {
+      font-size: 16px;
+      margin-top: 10px;
+      color: #36dcce;
+      font-weight: bold;
+    }
+    
+    .submessage {
+      font-size: 12px;
+      color: #ffffff;
+      margin-top: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="shield"></div>
+    <div class="message">NPM Shield is running</div>
+    <div class="submessage">If the extension finds a suspicious malware-related file, an alert will be generated to warn the user.</div>
+  </div>
+</body>
+</html>

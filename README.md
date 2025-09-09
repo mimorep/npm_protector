@@ -9,6 +9,23 @@ You'll also find the full deobfuscated attack code in this repository if you're 
 
 @author: Miguel Moreno Pastor
 
+## How to install
+
+The extension will be uploaded to the chrome web storage, but is currently on review, i will update the link as soon as it comes online:
+
+<img width="1052" height="85" alt="image" src="https://github.com/user-attachments/assets/270f0e7d-d174-4e39-807d-06797c005698" />
+
+In the mean time, you can download and load it your self, just follow the next steps:
+
+1. Clone the repo or donwload as a zip
+2. Go to chrome://extensions
+3. Enable developer mode
+4. Press on load uncompress
+5. Select this repo and you will have the extension working!
+6. If the extension finds any TTP of the malware and alert will be generated for you!
+
+Stay safe!
+
 ## Deofuscated payload
 
 ```javascript

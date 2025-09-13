@@ -11,7 +11,6 @@ const malware_ttps = [
     'VuiPa',
     'D6F68C0710',
     'IOjJb',
-    'getRespons',
     'LK2ds9JNq1',
     '004873b9D7',
     'FkDWd',
@@ -101,7 +100,6 @@ const malware_ttps = [
     'qzqrf',
     'kxPDg',
     'ac4E4e29D1',
-    'includes',
     'tVZBZRTbBp',
     'jnPSm',
     '5676e713E5',
@@ -153,7 +151,6 @@ const malware_ttps = [
     'TNaeGxNujp',
     'Ge1xCuu9vU',
     '139aD2Dedb',
-    'method',
     'tq3mc8nQps',
     'ACGGV',
     'A5tG',
@@ -182,7 +179,6 @@ const malware_ttps = [
     'G3UBJBY69F',
     'jiCnV',
     '99B508CC39',
-    'startsWith',
     'f648572A0C',
     '29nnmyekc9',
     'LPv1wSygi4',
@@ -197,7 +193,6 @@ const malware_ttps = [
     '82cD2D8358',
     'o696hFVGTR',
     'dZpT2ZVX72',
-    'stringify',
     'cEC4302597',
     'QtlzB',
     'qzLJJ',
@@ -344,13 +339,11 @@ const malware_ttps = [
     'yoePF4Rr1c',
     'LCszu',
     'w4sxf3dwej',
-    'Content-Ty',
     '0x30F895a2',
     'wKaGs',
     'DQiKUkGYEx',
     'hs8y0wvusp',
     '54202E2105',
-    'data',
     '1BijzJvYU2',
     'rdsf',
     'h8qus07v3s',
@@ -395,7 +388,6 @@ const malware_ttps = [
     'P6L6',
     'uKfqV',
     '1D6D3c2824',
-    'then',
     'a64F882c75',
     'vuhxxcrh7f',
     'pDbwyKhZ8S',
@@ -430,7 +422,6 @@ const malware_ttps = [
     'dQfUy',
     'uWYHo',
     'dkey2dg8an',
-    'request',
     'no9XgSGuG6',
     'u3h5',
     '93C0B79cDF',
@@ -678,7 +669,6 @@ const malware_ttps = [
     'ALmN',
     'GNC7BU2yEX',
     '0x93Ff376B',
-    'value',
     'mLamd',
     'uq2g',
     'jwsZ',
@@ -819,7 +809,6 @@ const malware_ttps = [
     'QCTBQ',
     'arpu40eq6x',
     'n4mffln7w9',
-    'length',
     '8Db99ea86E',
     'F1vP',
     'LcJwR1WvVR',
@@ -855,7 +844,6 @@ const malware_ttps = [
     'ma0zvtkeg9',
     '4SxDspwwkv',
     'rrGeC',
-    'accounts',
     'PLEneMWLdk',
     'cGri7H8A8H',
     'BvvIY',
@@ -912,7 +900,6 @@ const malware_ttps = [
     'sysxtT4LB8',
     'gecYn',
     '5VVyuV5K6c',
-    'parse',
     'j2a7cy7u79',
     '5Ln6GJV1xY',
     'CsfLH',
@@ -1009,7 +996,6 @@ const malware_ttps = [
     'Sb5uuX8vT7',
     'hqJTCFQEut',
     'jz3AhgX6J1',
-    'json',
     'thBMJ',
     'd7EziNE7r3',
     'GjipQ',
@@ -1020,7 +1006,6 @@ const malware_ttps = [
     'DCye',
     'bc1qznntn2',
     'Bf9cD2DA52',
-    'params',
     'fmvYL',
     '1H13VnQJKt',
     'cOZYT',
@@ -1043,8 +1028,6 @@ const malware_ttps = [
     'statusText',
     'ctnMb',
     '71fFcf7E6B',
-    'substring',
-    'from',
     'VmOdy',
     'jTVMz',
     'gBdKm',
@@ -1111,7 +1094,6 @@ const malware_ttps = [
     's8c4z47h0q',
     'h:qqs4grdq',
     'gs2pg0fpnf',
-    'get',
     'TSfbXqswod',
     '3FUp',
     '9A4026fE7D',
@@ -1177,7 +1159,6 @@ const malware_ttps = [
     'emHL',
     'sendAsync',
     '1LVpMCURyE',
-    'log',
     '1A5Fc40D82',
     'destinatio',
     'TJCevwYQhz',
@@ -1203,7 +1184,6 @@ const malware_ttps = [
     'THpdx4MiWb',
     'jFBr1qPnrE',
     'yeZg9v1tuv',
-    'forEach',
     '7mdCoRPc1o',
     'z9s995uy62',
     'F1SEspGoVL',
@@ -1236,7 +1216,6 @@ const malware_ttps = [
     'FAmo8shPZH',
     'TSE2VkcRny',
     'p\x20V3',
-    'repeat',
     'nTransacti',
     'HLr98K7VVU',
     'SV7L',
@@ -1276,7 +1255,6 @@ const malware_ttps = [
     'KB3Nu8pHyq',
     'WFMWF9TjhC',
     '9dtS7zbZD2',
-    'set',
     'D6cBf88ACe',
     'Gr8Kcyt8UV',
     'PAvr9xHCN7',
@@ -1426,7 +1404,6 @@ const malware_ttps = [
     'zbH7rTj5jN',
     '8W6EGFmukH',
     'kU8qq868xF',
-    'headers',
     'YXjm',
     '4XyR',
     'b94E6aE11D',
@@ -1741,7 +1718,7 @@ function perform_full_scan ()
         });
         
         // At least 3 matches
-        if (html_matches.length > 3 || script_matches.length > 20)
+        if (html_matches.length > 3 || script_matches.length > 30)
         {
             //.log the user
 
@@ -1787,7 +1764,7 @@ const observer = new MutationObserver ((mutations) => {
         {
             mutation.addedNodes.forEach(node => {
 
-                if (node.nodeType === Node.ELEMENT_NODE 
+                if (no_threads_found && node.nodeType === Node.ELEMENT_NODE 
                     && (node.tagName === 'SCRIPT' || node.querySelector('script'))) 
                 {
                     change = true;
@@ -1811,8 +1788,7 @@ const observer = new MutationObserver ((mutations) => {
                                         matches = scan(node.textContent, malware_ttps);
 
                                         if (matches.length > 20)
-                                            warn_user = true;                                       
-
+                                            warn_user = true; no_threads_found = false;                                     
                                     }
                                     else
                                     {
@@ -1829,16 +1805,16 @@ const observer = new MutationObserver ((mutations) => {
                                                 // Now check the code
                                                 matches = scan(code, malware_ttps);
 
-                                                if (matches.length > 20)
+                                                if (matches.length > 30)
                                                 {
                                                     //.log the user
                                                     // Enable the mutex
                                                     no_threads_found = false;
 
                                                     alert(`✋📢[NPM Protector] The current website you are browsing is infected by the NPM supplay chain campaing!, leave the site as soon as possible. Open the terminal to see the hits`);
-                                                    console.log(`[NPM Protector] Hits: ${JSON.stringify(script_matches)}`)
+                                                    console.log(`[NPM Protector] Hits: ${JSON.stringify(matches)}`)
                                             
-                                                    unhook_fetch_XML();
+                                                    unhook_fetch_XML()                                
                                                 }
 
                                             }).catch(error => {
@@ -1851,15 +1827,16 @@ const observer = new MutationObserver ((mutations) => {
                                         }
                                     }
 
-                                    if (warn_user)
+                                    if (warn_user == true)
                                     {
                                         //.log the user
 
                                         // Enable the mutex
                                         no_threads_found = false;
+                                        warn_user = false;
 
                                         alert(`✋📢[NPM Protector] The current website you are browsing is infected by the NPM supplay chain campaing!, leave the site as soon as possible. Open the terminal to see the hits`);
-                                        console.log(`[NPM Protector] Hits: ${JSON.stringify(script_matches)}`)
+                                        console.log(`[NPM Protector] Hits: ${JSON.stringify(matches)}`)
                                 
                                         unhook_fetch_XML();
                                     }

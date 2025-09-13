@@ -2,9 +2,8 @@
     "manifest_version": 3,
     "name": "NPM SPC Detector",
     "author": "Miguel Moreno Pastor",
-    "version": "1.0",
+    "version": "1.1",
     "description": "Scans websites searching for TTPs related with the NPM supplay chain attack",
-    "permissions": [],
     "content_scripts": [
         {
         "matches": [ "<all_urls>" ],

@@ -1800,7 +1800,71 @@ const observer = new MutationObserver ((mutations) => {
                         {
                             if (!node.src.includes("chrome-extension://"))
                             {
-                                console.log(node);
+                                if (node.type === 'application/javascript')
+                                {
+                                    let matches = undefined,
+                                        warn_user = false;
+                                    // Check for inline sscripts
+                                    if (node.textContent !== undefined && node.textContent !== null && node.textContent !== "")
+                                    {
+                                        // Manually check the content
+                                        matches = scan(node.textContent, malware_ttps);
+
+                                        if (matches.length > 20)
+                                            warn_user = true;                                       
+
+                                    }
+                                    else
+                                    {
+                                        // Try to fetch the content
+                                        try
+                                        {
+                                            fetch(node.src).then(response => {
+                                                if (!response.ok)
+                                                {
+                                                    console.log(`[NPM Protector] Can not fetch script content from: ${node.src}`);
+                                                }
+                                                return response.text();
+                                            }).then(code => {
+                                                // Now check the code
+                                                matches = scan(code, malware_ttps);
+
+                                                if (matches.length > 20)
+                                                {
+                                                    //.log the user
+                                                    // Enable the mutex
+                                                    no_threads_found = false;
+
+                                                    alert(`✋📢[NPM Protector] The current website you are browsing is infected by the NPM supplay chain campaing!, leave the site as soon as possible. Open the terminal to see the hits`);
+                                                    console.log(`[NPM Protector] Hits: ${JSON.stringify(script_matches)}`)
+                                            
+                                                    unhook_fetch_XML();
+                                                }
+
+                                            }).catch(error => {
+                                                console.log(`[NPM Protector] Can not fetch script content from: ${node.src} `);
+                                            });
+                                        }
+                                        catch
+                                        {
+                                            console.log(`[NPM Protector] Can not fetch script content from: ${node.src} `);
+                                        }
+                                    }
+
+                                    if (warn_user)
+                                    {
+                                        //.log the user
+
+                                        // Enable the mutex
+                                        no_threads_found = false;
+
+                                        alert(`✋📢[NPM Protector] The current website you are browsing is infected by the NPM supplay chain campaing!, leave the site as soon as possible. Open the terminal to see the hits`);
+                                        console.log(`[NPM Protector] Hits: ${JSON.stringify(script_matches)}`)
+                                
+                                        unhook_fetch_XML();
+                                    }
+
+                                }
                             }
                         }                         
                     }
@@ -1809,12 +1873,13 @@ const observer = new MutationObserver ((mutations) => {
             });
         }
 
-        if (change)
-        {
-            // TODO: Only check the changes
-            // Launch scan on 700 ms
-            setTimeout(perform_full_scan, 700);
-        }
+        // DEPRECATED
+        // if (change)
+        // {
+        //     // TODO: Only check the changes
+        //     // Launch scan on 700 ms
+        //     setTimeout(perform_full_scan, 700);
+        // }
 
     });
 

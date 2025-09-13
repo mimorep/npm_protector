@@ -1,6 +1,8 @@
 
 # Description
 
+YOU CAN USE THIS REPO AS A CHECKER OF THE EXTENSION, WHEN YOU BROWSER HERE, THE WARNING SHOULD BE PROMPTED!
+
 This project was created exclusively to protect users from the well-known NPM supply chain attack campaign of 09/09/2025.
 
 This Chrome extension will search for the TTPs extracted from the malware after deobfuscating it and understanding its behavior. It will also decouple the malware from the Search API and XMLHttp to replace wallets.

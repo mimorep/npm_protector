@@ -1768,6 +1768,10 @@ function perform_full_scan ()
 
         unhook_fetch_XML();
     }
+    else
+    {
+        console.log("[NPM Protector] No threads found on this website");
+    }
 }
 
 // Save a copy of the originals

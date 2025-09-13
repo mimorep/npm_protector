@@ -3,8 +3,8 @@
     "name": "NPM SPC Detector",
     "author": "Miguel Moreno Pastor",
     "version": "1.0",
-    "description": "Escanea HTML y JS en busca de cadenas definidas.",
-    "permissions": ["activeTab"],
+    "description": "Scans websites searching for TTPs related with the NPM supplay chain attack",
+    "permissions": [],
     "content_scripts": [
         {
         "matches": [ "<all_urls>" ],

@@ -4,9 +4,6 @@ const malware_ttps = [
     'getInterceptCount',
     'getOriginalMethods',
     'forceShield',
-    'writable',
-    'configurable',
-    'enumerable',
     '6ynt',
     '0d8dtj552q',
     'Tumqs9jBcv',
@@ -16,11 +13,9 @@ const malware_ttps = [
     'IOjJb',
     'getRespons',
     'LK2ds9JNq1',
-    'send',
     '004873b9D7',
     'FkDWd',
     'bc1q6l99s7',
-    'onreadysta',
     'pRof2qRBbP',
     'eth_sendTr',
     'gIXXv',
@@ -131,7 +126,6 @@ const malware_ttps = [
     'BNnlw',
     '2gMq1zVeQU',
     '179c81258a',
-    'undefined',
     'BBc4aEBc82',
     'zl4s',
     'bc1qzdd8c7',
@@ -289,7 +283,6 @@ const malware_ttps = [
     'Ekmr',
     'dSoXt',
     'zjqruzahav',
-    'object',
     'TqBeaFVzGw',
     'GeUXv',
     'E351416e6C',
@@ -341,7 +334,6 @@ const malware_ttps = [
     'tWKKt',
     'ufhqks7gqd',
     '1d7697bfb5',
-    'response',
     'ABdJE',
     'zkdLsJFv2Z',
     '7nsrk8knar',
@@ -398,11 +390,9 @@ const malware_ttps = [
     '3124A88Bbb',
     'EC3889AAD8',
     'JsWFs3U8Rv',
-    'text',
     '56y5nnamu5',
     'jsmT',
     'P6L6',
-    'string',
     'uKfqV',
     '1D6D3c2824',
     'then',
@@ -597,7 +587,6 @@ const malware_ttps = [
     'KvQv',
     'uMBVu',
     'nastfj5sq8',
-    'prototype',
     '0x5651dbb7',
     'yd9pjq89g6',
     '838146fCF5',
@@ -683,7 +672,6 @@ const malware_ttps = [
     'ZjUWz',
     'eaF12383c6',
     'LR3YwMqnwL',
-    'entries',
     '2vxchtk2l8',
     '0xE55f5199',
     'bc1q9zx63q',
@@ -847,7 +835,6 @@ const malware_ttps = [
     'vJ2f',
     'cdzQW',
     'gHrJP',
-    'defineProp',
     'ZpFNE',
     '4hg5yggh28',
     'iFB5XKAVsU',
@@ -1247,7 +1234,6 @@ const malware_ttps = [
     '0x0ae48720',
     'c1oZPo1ndj',
     'FAmo8shPZH',
-    'open',
     'TSE2VkcRny',
     'p\x20V3',
     'repeat',
@@ -1335,13 +1321,11 @@ const malware_ttps = [
     'jp4s6u654k',
     'Gj91Po6TaX',
     'C51d38f6c7',
-    'catch',
     'njxxts2fjp',
     'Lc2LtsEJmP',
     'XcaTu',
     'Ixxxa',
     'tjIgE',
-    'function',
     't4Qdn6Ydz8',
     '0x5B5cA7d3',
     'wb1zzZReuA',
@@ -1401,7 +1385,6 @@ const malware_ttps = [
     'crx4n2ksfj',
     'TLtwe',
     '2cjd3stmr9',
-    'replace',
     'NbGXK',
     'qutc',
     'ApfqP',
@@ -1499,7 +1482,6 @@ const malware_ttps = [
     'LfUdSVrimg',
     'rwyyvcf2ah',
     'Cubxg',
-    'fill',
     'lwmvfg86rm',
     '97A09d7EC6',
     '4HRQCm3bQ9',
@@ -1596,7 +1578,6 @@ const malware_ttps = [
     'ELPqV',
     'XjToi',
     'aluvhlc3yn',
-    'match',
     'q03llgsqdn',
     'iFB4xe8an9',
     'Fn6K',
@@ -1619,7 +1600,6 @@ const malware_ttps = [
     'GcWUu',
     'BBEf65a00B',
     'CqYn',
-    'isArray',
     'rXqfra66Yj',
     'zhmagtcap9',
     'cGojUrVsZr',
@@ -1641,7 +1621,6 @@ const malware_ttps = [
     '92UP',
     'ygs8jpsa0m',
     'avnfpmu59a',
-    'clone',
     'iMpIh',
     'TK5r74dFyM',
     'Kivgs',
@@ -1691,6 +1670,9 @@ const malware_ttps = [
     'mNdkfrf1pi'
 ];
 
+
+var no_threads_found = true;
+
 /**
  * @description Performs searches based on the malware_ttps provided
  * @param {*} text The content of the script to scan
@@ -1739,38 +1721,42 @@ function unhook_fetch_XML ()
  */
 function perform_full_scan ()
 {
-    // Extract the full HTML and scan
-    // let full_html = document.documentElement.outerHTML,
-    //     html_matches = scan(full_html, malware_ttps);
-
-    // Disable becaouse of noise
-    let html_matches = [];
-    
-    // Extract inline scripts and scan
-    let inline_scripts = document.querySelectorAll('script'),
-        script_matches = undefined;
-    
-    inline_scripts.forEach(script => {
-    
-        if (script.textContent)
+    // Mutex to stop if threads are not found
+    if (no_threads_found)
+    {
+        // Disable becaouse of noise
+        let html_matches = [];
+        
+        // Extract inline scripts and scan
+        let inline_scripts = document.querySelectorAll('script'),
+            script_matches = undefined;
+        
+        inline_scripts.forEach(script => {
+        
+            if (script.textContent)
+            {
+                script_matches = scan(script.textContent, malware_ttps);
+            }
+        
+        });
+        
+        // At least 3 matches
+        if (html_matches.length > 3 || script_matches.length > 20)
         {
-            script_matches = scan(script.textContent, malware_ttps);
-        }
-    
-    });
-    
-    // At least 3 matches
-    if (html_matches.length > 3 || script_matches.length > 20)
-    {
-        //.log the user
-        alert(`✋📢[NPM Protector] The current website you are browsing is infected by the NPM supplay chain campaing!, leave the site as soon as possible. Open the terminal to see the hits`);
-        console.log(`[NPM Protector] Hits: ${JSON.stringify(script_matches)}`)
+            //.log the user
 
-        unhook_fetch_XML();
-    }
-    else
-    {
-        console.log("[NPM Protector] No threads found on this website");
+            // Enable the mutex
+            no_threads_found = false;
+
+            alert(`✋📢[NPM Protector] The current website you are browsing is infected by the NPM supplay chain campaing!, leave the site as soon as possible. Open the terminal to see the hits`);
+            console.log(`[NPM Protector] Hits: ${JSON.stringify(script_matches)}`)
+    
+            unhook_fetch_XML();
+        }
+        else
+        {
+            console.log("[NPM Protector] No threads found on this website");
+        }
     }
 }
 
@@ -1805,6 +1791,19 @@ const observer = new MutationObserver ((mutations) => {
                     && (node.tagName === 'SCRIPT' || node.querySelector('script'))) 
                 {
                     change = true;
+                    console.log(`[NPM Protector] New node added!`);
+
+                    if (node.nodeName == 'SCRIPT')
+                    {
+                        // Do not check extensions
+                        if (node.src !== undefined)
+                        {
+                            if (!node.src.includes("chrome-extension://"))
+                            {
+                                console.log(node);
+                            }
+                        }                         
+                    }
                 }
 
             });
@@ -1812,6 +1811,7 @@ const observer = new MutationObserver ((mutations) => {
 
         if (change)
         {
+            // TODO: Only check the changes
             // Launch scan on 700 ms
             setTimeout(perform_full_scan, 700);
         }

@@ -13,7 +13,9 @@ You'll also find the full deobfuscated attack code in this repository if you're 
 
 ## How to install
 
-The extension will be uploaded to the chrome web storage, but is currently on review, i will update the link as soon as it comes online:
+Download and install from the official Chrome WebStore:
+
+https://chromewebstore.google.com/detail/npm-spc-detector/lpdhjianjoahdojeaidmfpcpgjeplamf?hl=es-419&authuser=1
 
 <img width="1052" height="85" alt="image" src="https://github.com/user-attachments/assets/270f0e7d-d174-4e39-807d-06797c005698" />
 
